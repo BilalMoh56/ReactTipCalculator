@@ -1,5 +1,6 @@
 import './style.css'
 import { useRef,useState } from 'react';
+import { useState } from 'react';
 
 
 
@@ -56,7 +57,50 @@ export default function TipCalculator() {
 
                 {result}
             </div>
+            <div>
+      <label htmlFor="guestAmount">Amount of Guests</label>
+      <select
+        name="guestAmount"
+        value={guestAmount}
+        onChange={handleGuestChange}
+      >
 
+      </select>
+      <br />
+      <label htmlFor="serviceQuality">Service Quality</label>
+      <br />
+      <select
+        name="serviceQuality"
+        value={serviceQuality}
+        onChange={handleServiceChange}
+      >
+        <option value="">Select service quality</option>
+        <option value="1">1 - It was poor Service</option>
+        <option value="2">2 - It could've been better</option>
+        <option value="3">3 - It was okay</option>
+        <option value="4">4 - It was Great!</option>
+        <option value="5">5 - The best service in town!</option>
+      </select>
+      <br />
+    </div>
         </>
     );
 }
+           
+
+ {
+    let [guestAmount, setGuestAmount] = useState('');
+     let [serviceQuality, setServiceQuality] = useState('');
+
+let handleGuestChange = (event) => {
+    setGuestAmount(current.target.value);
+  };
+
+  let handleServiceChange = (event) => {
+    setServiceQuality(current.target.value);
+  
+  };
+
+ };
+ 
+ 
